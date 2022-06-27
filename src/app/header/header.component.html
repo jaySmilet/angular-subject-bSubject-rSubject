@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="ex">Ex</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="rs">Rs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="main">Main</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="exclusive">
+        <div class="badge badge-primary">Exclusive</div>
+      </a>
+    </li>
+  </ul>
+</nav>

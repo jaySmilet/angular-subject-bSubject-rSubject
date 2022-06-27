@@ -1,0 +1,61 @@
+<div class="container">
+  <h3>Replay Subject</h3>
+  <hr />
+  <div class="d-flex justify-content-between">
+    <h4>Add Video</h4>
+    <button class="btn btn-danger" (click)="toogleMethod()">
+      Toggle Inerval
+    </button>
+  </div>
+  <hr />
+  <div class="d-flex justify-content-center" *ngIf="!showToggle">
+    <input type="text" class="form-control w-50 mr-4" #video />
+    <button class="btn btn-success" (click)="addData(video.value)">Add</button>
+  </div>
+  <hr />
+
+  <div class="row">
+    <div class="col-md-4">
+      <h5>User:01</h5>
+      <hr />
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let list of userList1">
+          Content: {{ list }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5>User:02</h5>
+      <hr />
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let list of userList2">
+          Content: {{ list }}
+        </li>
+      </ul>
+      <button
+        class="btn btn-success"
+        [ngClass]="subscribeMode2 ? 'btn-success' : 'btn-danger'"
+        (click)="onSubscribeMode2Change()"
+      >
+        {{ subscribeMode2 ? 'Subscribed' : 'Subscribe' }}
+      </button>
+    </div>
+    <div class="col-md-4">
+      <h5>User:03</h5>
+      <hr />
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let list of userList3">
+          Content: {{ list }}
+        </li>
+      </ul>
+      <button
+        class="btn btn-success"
+        [ngClass]="subscribeMode3 ? 'btn-success' : 'btn-danger'"
+        (click)="onSubscribeMode3Change()"
+      >
+        {{ subscribeMode3 ? 'Subscribed' : 'Subscribe' }}
+      </button>
+    </div>
+  </div>
+</div>
